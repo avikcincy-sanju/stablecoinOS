@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StablecoinOS — Subscribe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#04050b;--panel:#0d1018;--border:#1b2233;--text:#eef2ff;--muted:#9aa4bd;--accent:#00e5ff;--accent2:#6d4dff;--success:#00ff9c}
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{background:radial-gradient(circle at top right,rgba(0,229,255,.12),transparent 35%),radial-gradient(circle at bottom left,rgba(109,77,255,.12),transparent 35%),var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden}
+    .grid{position:fixed;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;z-index:0}
+    .container{position:relative;z-index:1;width:100%;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:40px 20px}
+    .card{width:100%;max-width:760px;background:rgba(13,16,24,.82);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.08);padding:60px;position:relative;overflow:hidden;box-shadow:0 0 80px rgba(0,0,0,.45)}
+    .card:before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+    .eyebrow{font-family:'Space Mono',monospace;color:var(--accent);letter-spacing:.3em;text-transform:uppercase;font-size:11px;margin-bottom:24px;display:flex;align-items:center;gap:12px}.eyebrow:before{content:'';width:40px;height:1px;background:var(--accent)}
+    h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(64px,10vw,120px);line-height:.9;letter-spacing:.03em;margin-bottom:24px}h1 span{color:var(--accent)}
+    .description{font-size:20px;line-height:1.8;color:var(--muted);margin-bottom:40px;max-width:620px}
+    .benefits{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-bottom:42px}.benefit{border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.02);padding:18px}.benefit-title{font-family:'Space Mono',monospace;color:var(--accent);font-size:11px;letter-spacing:.15em;text-transform:uppercase;margin-bottom:10px}.benefit-text{font-size:14px;color:var(--muted);line-height:1.7}
+    form{display:flex;gap:0;margin-bottom:18px}input{flex:1;padding:22px;background:#070b12;border:1px solid var(--border);border-right:none;color:var(--text);font-size:16px;outline:none}input::placeholder{color:#6f7890}input:focus{border-color:var(--accent)}
+    button{background:linear-gradient(90deg,var(--accent),#29cfff);color:#02040a;border:none;padding:0 34px;font-family:'Space Mono',monospace;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:transform .2s ease}button:hover{transform:translateY(-1px)}
+    .microcopy{display:flex;gap:24px;flex-wrap:wrap;margin-top:20px}.microcopy div{font-family:'Space Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}.microcopy div:before{content:'✓';color:var(--success);margin-right:8px}
+    #successMessage{display:none;margin-top:20px;border:1px solid rgba(0,255,156,.25);background:rgba(0,255,156,.06);color:var(--success);padding:18px;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+    .footer{margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;color:#6f7890;font-size:13px}.footer a{color:var(--accent);text-decoration:none}
+    @media(max-width:768px){.card{padding:40px 24px}.benefits{grid-template-columns:1fr}form{flex-direction:column}input{border-right:1px solid var(--border);border-bottom:none}button{padding:22px}}
+  </style>
+</head>
+<body>
+<div class="grid"></div>
+<div class="container">
+  <div class="card">
+    <div class="eyebrow">Weekly Stablecoin Intelligence</div>
+    <h1>STAY AHEAD<br>OF <span>STABLE</span> MONEY</h1>
+    <p class="description">Regulatory shifts. Architecture breakdowns. AI-native payment rails. Treasury innovation. Cross-border settlement intelligence. Delivered directly from Avik Nandi’s StablecoinOS research desk.</p>
+    <div class="benefits">
+      <div class="benefit"><div class="benefit-title">Infrastructure Intelligence</div><div class="benefit-text">Deep dives into stablecoin acquiring, programmable payments, AI orchestration layers, and multi-rail settlement systems.</div></div>
+      <div class="benefit"><div class="benefit-title">Regulatory Tracking</div><div class="benefit-text">GENIUS Act, MiCA, MAS, Circle, Tether, Stripe, Visa, Mastercard, and emerging institutional adoption.</div></div>
+    </div>
+    <form id="subscribeForm">
+      <input type="email" id="email" placeholder="your@email.com" required />
+      <button type="submit">Subscribe</button>
+    </form>
+    <div id="successMessage">Subscription successful. Weekly intelligence unlocked.</div>
+    <div class="microcopy"><div>No Spam</div><div>Founder-Level Insights</div><div>Free Access</div></div>
+    <div class="footer"><div>Powered by StablecoinOS · AI-Native Financial Intelligence</div><div><a href="index.html">Back to main site</a></div></div>
+  </div>
+</div>
+<script>
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwb96GuoNE4fni0ey5SIW_HnwgzxTPQ3tE4768hWReSsXsXfLHenXjYdhZGmxFJLjdDnQ/exec';
+
+  const params = new URLSearchParams(window.location.search);
+  const prefilledEmail = params.get('email');
+  if (prefilledEmail) document.getElementById('email').value = prefilledEmail;
+
+  document.getElementById('subscribeForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = document.getElementById('email').value.trim().toLowerCase();
+
+    try {
+      await fetch(SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email })
+      });
+
+      document.getElementById('subscribeForm').reset();
+      document.getElementById('successMessage').style.display = 'block';
+    } catch (error) {
+      alert('Something went wrong. Please try again.');
+      console.error(error);
+    }
+  });
+</script>
+</body>
+</html>
