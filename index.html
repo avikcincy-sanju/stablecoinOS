@@ -7,6 +7,24 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- StablecoinOS branded favicon -->
+<link rel="icon" type="image/svg+xml" href='data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"%3E%3Crect width="64" height="64" rx="12" fill="%23050508"/%3E%3Cpath d="M16 34h32M20 24h24M24 44h16" stroke="%2300e5ff" stroke-width="5" stroke-linecap="round"/%3E%3Ccircle cx="32" cy="34" r="6" fill="%237b2fff"/%3E%3C/svg%3E'>
+<meta name="theme-color" content="#050508">
+
+<!-- Privacy-friendly analytics: Plausible. Replace data-domain after adding your domain inside Plausible. -->
+<script defer data-domain="avikcincy-sanju.github.io/stablecoinOS" src="https://plausible.io/js/script.js"></script>
+
+<!-- Optional GA4 placeholder: uncomment after creating a GA4 property and replacing G-XXXXXXXXXX.
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+-->
+
 <style>
   :root {
     --black: #050508;
@@ -1788,6 +1806,149 @@
     .usecase-body { padding: 0 24px 24px; }
   }
 
+
+  /* ── TOP SIGNAL OF THE DAY ── */
+  .top-signal-section {
+    padding: 90px 80px;
+    background:
+      radial-gradient(circle at 12% 0%, rgba(0,229,255,0.09), transparent 28%),
+      radial-gradient(circle at 100% 0%, rgba(123,47,255,0.09), transparent 24%),
+      var(--deep);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    z-index: 1;
+  }
+
+  .top-signal-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+    gap: 40px;
+    background: linear-gradient(135deg, rgba(14,14,26,0.96) 0%, rgba(8,8,16,0.98) 100%);
+    border: 1px solid rgba(0,229,255,0.22);
+    padding: 42px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 28px 80px rgba(0,0,0,0.35), 0 0 45px rgba(0,229,255,0.06);
+  }
+
+  .top-signal-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(90deg, rgba(0,229,255,0.07), transparent 28%),
+      linear-gradient(180deg, rgba(255,255,255,0.025), transparent 45%);
+    pointer-events: none;
+  }
+
+  .top-signal-content,
+  .top-signal-side {
+    position: relative;
+    z-index: 1;
+  }
+
+  .top-signal-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--success);
+    border: 1px solid rgba(0,255,136,0.25);
+    background: rgba(0,255,136,0.05);
+    padding: 7px 12px;
+    margin-bottom: 24px;
+  }
+
+  .top-signal-badge::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--success);
+    box-shadow: 0 0 14px rgba(0,255,136,0.65);
+    animation: pulse-live 1.5s ease-in-out infinite;
+  }
+
+  .top-signal-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(46px, 6vw, 84px);
+    line-height: 0.95;
+    letter-spacing: 0.02em;
+    margin-bottom: 18px;
+  }
+
+  .top-signal-title span {
+    color: var(--accent);
+  }
+
+  .top-signal-copy {
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.8;
+    max-width: 780px;
+    margin-bottom: 28px;
+  }
+
+  .top-signal-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .top-signal-side {
+    border-left: 1px solid var(--border);
+    padding-left: 32px;
+    display: grid;
+    align-content: center;
+    gap: 18px;
+  }
+
+  .top-signal-metric {
+    border: 1px solid rgba(255,255,255,0.07);
+    background: rgba(255,255,255,0.025);
+    padding: 18px;
+  }
+
+  .top-signal-metric-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+
+  .top-signal-metric-value {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 34px;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+  }
+
+  .top-signal-note {
+    font-family: 'Space Mono', monospace;
+    color: var(--muted);
+    font-size: 10px;
+    line-height: 1.7;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 1100px) {
+    .top-signal-section { padding: 80px 40px; }
+    .top-signal-card { grid-template-columns: 1fr; }
+    .top-signal-side { border-left: none; border-top: 1px solid var(--border); padding-left: 0; padding-top: 28px; }
+  }
+
+  @media (max-width: 700px) {
+    .top-signal-section { padding: 60px 24px; }
+    .top-signal-card { padding: 28px; }
+  }
+
 </style>
 </head>
 <body>
@@ -1940,6 +2101,43 @@
 </div>
 
 
+
+
+<!-- ── TOP SIGNAL OF THE DAY ── -->
+<section class="top-signal-section" id="top-signal">
+  <div class="top-signal-card">
+    <div class="top-signal-content">
+      <div class="top-signal-badge">Top Signal of the Day</div>
+      <h2 class="top-signal-title">
+        STABLECOINS ARE BECOMING<br>
+        <span>SETTLEMENT INFRASTRUCTURE</span>
+      </h2>
+      <p class="top-signal-copy">
+        The most important signal is no longer whether stablecoins are “crypto.” It is whether banks, card networks,
+        fintech platforms, and enterprise treasury teams begin treating tokenized dollars as programmable settlement
+        primitives across cross-border payments, AI-native commerce, and multi-rail orchestration.
+      </p>
+      <div class="top-signal-actions">
+        <a href="#newsroom" class="btn-primary" data-track-category="Top Signal" data-track-label="View Live Feed">View Live Feed</a>
+        <a href="#usecases" class="btn-secondary" data-track-category="Top Signal" data-track-label="Explore Use Cases">Explore Use Cases</a>
+      </div>
+    </div>
+
+    <div class="top-signal-side">
+      <div class="top-signal-metric">
+        <div class="top-signal-metric-label">Strategic Read</div>
+        <div class="top-signal-metric-value">HIGH</div>
+      </div>
+      <div class="top-signal-metric">
+        <div class="top-signal-metric-label">Watch Area</div>
+        <div class="top-signal-metric-value">BANKS + AI</div>
+      </div>
+      <div class="top-signal-note">
+        Tracked via StablecoinOS CTR events, Plausible page analytics, and local link-click telemetry.
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ── LIVE NEWSROOM GRID ── -->
 <section class="newsroom-section" id="newsroom">
@@ -4025,6 +4223,77 @@ if (document.readyState === 'loading') {
 } else {
   attachNewsletterPopup();
 }
+
+
+// ── StablecoinOS CTR Tracking ──
+(function () {
+  function getLinkLabel(anchor) {
+    return anchor.getAttribute('data-track-label') ||
+      (anchor.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 120) ||
+      anchor.getAttribute('href') ||
+      'unknown-link';
+  }
+
+  function getLinkCategory(anchor) {
+    if (anchor.getAttribute('data-track-category')) return anchor.getAttribute('data-track-category');
+    if (anchor.classList.contains('pub-card')) return 'Publication';
+    if (anchor.classList.contains('news-card')) return 'Newsroom';
+    if (anchor.classList.contains('author-link')) return 'Author';
+    if (anchor.classList.contains('nav-cta')) return 'Subscribe';
+    if (anchor.closest('.footer-links')) return 'Footer';
+    if (anchor.closest('.top-signal-section')) return 'Top Signal';
+    return anchor.hostname && anchor.hostname !== window.location.hostname ? 'External Link' : 'Internal Link';
+  }
+
+  function storeLocalClick(eventPayload) {
+    try {
+      const key = 'stablecoinos_ctr_events';
+      const existing = JSON.parse(localStorage.getItem(key) || '[]');
+      existing.push(eventPayload);
+      localStorage.setItem(key, JSON.stringify(existing.slice(-250)));
+    } catch (e) {
+      // localStorage unavailable; safely ignore.
+    }
+  }
+
+  window.trackStablecoinOSClick = function(anchor) {
+    if (!anchor) return;
+
+    const payload = {
+      label: getLinkLabel(anchor),
+      category: getLinkCategory(anchor),
+      url: anchor.href || anchor.getAttribute('href') || '',
+      path: window.location.pathname,
+      ts: new Date().toISOString()
+    };
+
+    storeLocalClick(payload);
+
+    if (typeof window.plausible === 'function') {
+      window.plausible('Link Click', {
+        props: {
+          category: payload.category,
+          label: payload.label,
+          url: payload.url
+        }
+      });
+    }
+
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'link_click', {
+        event_category: payload.category,
+        event_label: payload.label,
+        link_url: payload.url
+      });
+    }
+  };
+
+  document.addEventListener('click', function(e) {
+    const anchor = e.target.closest && e.target.closest('a[href]');
+    if (!anchor) return;
+    window.trackStablecoinOSClick(anchor);
+  }, true);
+})();
 
 </script>
 
